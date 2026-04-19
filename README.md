@@ -1,10 +1,83 @@
            
-# AutoPostMortem > 
-AI-powered incident analysis agent that auto-generates > 
-engineering post-mortems from logs, git diffs & Slack threads. 
-## Live Demo [Try it on Hugging Face Spaces](https://huggingface.co/...) 
-## What it does Input: server logs + git diff + optional Slack export Output:
-full post-mortem with root cause, timeline, severity score (P0–P3), and follow-up tasks
-## Architecture 5-node LangGraph agent: Ingest → Timeline → Analyze → Self-Critique → Report ## Tech Stack - LangGraph (agentic orchestration) - Google API / gemini-flash-lite (LLM inference) - FastAPI + Streamlit - Deployed on Hugging Face Spaces 
-## Key design decisions - Self-critique node challenges the root cause hypothesis before the final report is written - Each node has a single responsibility (clean state machine) - All open-source, zero cost to run 
-## Run locally git clone ... && pip install -r requirements.txt GOOGLE_API_KEY=your_key streamlit run ui/streamlit_app.py
+# ⚙️ AutoPostMortem  
+### AI-Powered Incident Analysis Agent
+
+AutoPostMortem is an **AI-driven incident analysis system** that automatically generates **engineering post-mortems** from logs, git diffs, and Slack conversations.
+
+It transforms raw debugging data into **structured, actionable reports** — saving hours of manual analysis.
+
+---
+
+## 🚀 Live Demo  
+👉 Try it on Hugging Face Spaces *(add your link here)*
+
+---
+
+## 🧠 What It Does
+
+### 🔹 Input
+- Server logs  
+- Git diffs  
+- Optional Slack export  
+
+### 🔹 Output
+- 📌 Root Cause Analysis  
+- 🕒 Incident Timeline  
+- ⚠️ Severity Score (P0–P3)  
+- ✅ Actionable Follow-up Tasks  
+- 📄 Full Engineering Post-Mortem  
+
+---
+
+## 🏗️ Architecture
+
+**LangGraph Multi-Agent Pipeline:**
+
+### 🔹 Nodes Explained
+
+- **Ingest Node**  
+  Cleans and structures raw inputs (logs, diffs, Slack)
+
+- **Timeline Node**  
+  Reconstructs sequence of events
+
+- **Analyze Node**  
+  Identifies root cause and contributing factors
+
+- **Self-Critique Node**  
+  Challenges the hypothesis to reduce hallucinations
+
+- **Report Node**  
+  Generates final structured post-mortem
+
+---
+
+## 🧩 Tech Stack
+
+- 🧠 **LangGraph** – Agent orchestration  
+- 🤖 **Google Gemini (Flash Lite)** – LLM inference  
+- ⚡ **FastAPI** – Backend API  
+- 🎨 **Streamlit** – UI  
+- ☁️ **Hugging Face Spaces** – Deployment  
+
+---
+
+## ⚙️ Key Design Decisions
+
+- ✅ **Self-Critique Layer**
+  - Validates root cause before final output  
+  - Reduces hallucinations  
+
+- ✅ **Single Responsibility Nodes**
+  - Each agent does one job  
+  - Clean, modular pipeline  
+
+- ✅ **Deterministic Flow**
+  - Graph-based execution (not chaotic agent loops)  
+
+- ✅ **Zero-Cost Stack**
+  - Fully open-source components  
+  - No paid APIs required (optional Gemini usage)
+
+---
+
