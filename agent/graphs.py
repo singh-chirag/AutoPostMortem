@@ -20,4 +20,4 @@ def build_graph():
     
     return graph.compile()
 
-agent_graph = build_graph()
+graphs = build_graph()

@@ -1,11 +1,11 @@
-from langchain_google_genai import ChatGoogleGenerativeAI as ChatGroq
+from langchain_google_genai import ChatGoogleGenerativeAI 
 from langchain_core.messages import HumanMessage
 from agent.prompt import ANALYZE_PROMPT, CRITIQUE_PROMPT
 from agent.models import IncidentState
 import json, os, re
 from datetime import datetime
 
-llm = ChatGroq(model=os.getenv('MODEL_NAME', 'llama3-70b-8192'), temperature=0.1)
+llm = ChatGoogleGenerativeAI(model=os.getenv('MODEL_NAME', 'models/gemini-2.5-flash-lite'), temperature=0.1)
 
 def ingest_node(state: IncidentState) -> IncidentState:
     """Parse and normalize all input sources into unified format"""
